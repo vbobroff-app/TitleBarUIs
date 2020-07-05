@@ -1,0 +1,15 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/TitleBarUIs;component/WindowCloseButton/Themes/WindowCloseButton.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/TitleBarUIs;component/WindowButtons/Themes/WindowButtons.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/TitleBarUIs;component/TitleBar/Themes/TitleBar.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>
+
+
+
+
+
