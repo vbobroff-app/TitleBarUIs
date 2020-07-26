@@ -8,60 +8,6 @@ namespace TitleBarUIs
     internal static class Utility
     {
 
-        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public static int GetXlParam(IntPtr lParam)
-        {
-            return LoWord(lParam.ToInt32());
-        }
-
-        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public static int GetYlParam(IntPtr lParam)
-        {
-            return HiWord(lParam.ToInt32());
-        }
-
-        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public static int HiWord(int i)
-        {
-            return (short)(i >> 16);
-        }
-
-        [SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public static int LoWord(int i)
-        {
-            return (short)(i & 0xFFFF);
-        }
-
-        public static bool IsThicknessNonNegative(Thickness thickness)
-        {
-            if (!IsDoubleFiniteAndNonNegative(thickness.Top))
-            {
-                return false;
-            }
-
-            if (!IsDoubleFiniteAndNonNegative(thickness.Left))
-            {
-                return false;
-            }
-
-            if (!IsDoubleFiniteAndNonNegative(thickness.Bottom))
-            {
-                return false;
-            }
-
-            if (!IsDoubleFiniteAndNonNegative(thickness.Right))
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        public static bool IsDoubleFiniteAndNonNegative(double d)
-        {
-            return !double.IsNaN(d) && !double.IsInfinity(d) && !(d < 0);
-        }
-
         /// <summary>
         /// Compare object values that may be null
         /// </summary>
