@@ -7,3 +7,11 @@ Title bar and buttons for custom WPF windows
 * **[TitleBar](#titlebar)** 
 * **[WindowsButtons](#windowsbuttons)**
 * **[CloseButton](#closebutton)**
+
+## How to Install
+*CLI  Nuget Pack command*
+```
+Install-Package FluentWPFChromes
+```
+https://nuget.org/packages/TitleBarUIs
+
