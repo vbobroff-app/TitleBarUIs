@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:l="clr-namespace:TitleBarUIs"
-                    xmlns:titleBarUIs="clr-namespace:TitleBarUIs">
+                    xmlns:l="clr-namespace:TitleBarUIs">
 
     <ControlTemplate x:Key="TitleBarTemplate" TargetType="{x:Type l:TitleBar}">
 
@@ -60,11 +59,11 @@
                 <Setter  Property="Margin" Value="0,4,4,0"/>
             </DataTrigger>
 
-            <DataTrigger Binding="{Binding Path=(l:TitleBar.Icon), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Converter={titleBarUIs:IsNull}}" Value="false">
+            <DataTrigger Binding="{Binding Path=(l:TitleBar.Icon), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Converter={l:IsNull}}" Value="false">
                 <Setter Property="l:TitleBar.Icon" Value="{Binding Path=(l:TitleBar.Icon), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
             </DataTrigger>
 
-            <DataTrigger Binding="{Binding Path=(l:TitleBar.Title), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Converter={titleBarUIs:IsNull}}" Value="false">
+            <DataTrigger Binding="{Binding Path=(l:TitleBar.Title), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}, Converter={l:IsNull}}" Value="false">
                 <Setter Property="l:TitleBar.Title" Value="{Binding Path=(l:TitleBar.Title), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"/>
             </DataTrigger>
 

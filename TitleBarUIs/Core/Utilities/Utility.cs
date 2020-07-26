@@ -73,6 +73,11 @@ namespace TitleBarUIs
             return value?.Equals(eqValue) ?? eqValue == null;
         }
 
+        public static bool IsEqual(this double value, double eqValue, double precision = 1E-12)
+        {
+            return Math.Abs(value - eqValue) < precision;
+        }
+
         /// <summary>
         /// Convert string to double according culture symbols
         /// </summary>
@@ -99,6 +104,11 @@ namespace TitleBarUIs
         public static double RealHeight(this FrameworkElement fe)
         {
             return  double.IsNaN(fe.Height) ? fe.ActualHeight : fe.Height;
+        }
+
+        public static double RealWidth(this FrameworkElement fe)
+        {
+            return double.IsNaN(fe.Width) ? fe.ActualWidth : fe.Width;
         }
 
     }

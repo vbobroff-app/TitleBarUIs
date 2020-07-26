@@ -115,11 +115,11 @@ namespace TitleBarUIs
         }
         #endregion
 
-        public object Buttons { set; get; }
+        public IInputElement Buttons { set; get; }
 
-        public object Text { set; get; }
+        public IInputElement Text { set; get; }
 
-        public object ImageIcon { set; get; }
+        public IInputElement ImageIcon { set; get; }
 
         #region constructors
         static TitleBar()
@@ -155,8 +155,6 @@ namespace TitleBarUIs
             imageIcon.SetBinding(WidthProperty, wBinding);
             imageIcon.VerticalAlignment = VerticalAlignment.Center;
             ImageIcon = imageIcon;
-
-            
         }
 
         #endregion
@@ -179,6 +177,8 @@ namespace TitleBarUIs
             var top = (this.RealHeight() - IconSize) / 2;
             if (top < 3) top = 3;
             Canvas.SetTop(image, top);
+
+
         }
     }
 }

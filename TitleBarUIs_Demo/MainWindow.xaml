@@ -5,22 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:f="clr-namespace:FluentWpfChromes;assembly=FluentWpfChromes"
         xmlns:ui="clr-namespace:TitleBarUIs;assembly=TitleBarUIs"
+        xmlns:vtb="clr-namespace:VectorTextBlock;assembly=VectorTextBlock"
+
 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="549" Width="800"
         WindowStyle="None"
-        Background="#7F000000" Foreground="White">
+        Background="#7F000000" Foreground="White"
+        BorderThickness="1" 
+        BorderBrush="DarkGray">
 
     <Window.Resources>
+
         <PathGeometry x:Key="MediaIconGeometry">F1 M23.587 15.474c0 0 5.445 4.124 5.445 4.124s-4.077 12.401-4.077 12.401c0 0-7.634-4.732-7.634-4.732s6.266-11.793 6.266-11.793zM25.362 4.83c0 0 1.706 1.475 1.706 1.475s-11.641 19.789-11.641 19.789c0 0-3.46-2.145-3.46-2.145s13.394-19.12 13.394-19.12zM12.626 5.976c0 0 10.086 7.737 10.086 7.737s-7.284 12.382-7.284 12.382c0 0-15.428-9.564-15.428-9.564s12.626-10.555 12.626-10.555zM25.362 4.83c0 0 6.638 5.738 6.638 5.738s-2.435 7.407-2.435 7.407c0 0-8.687-6.744-8.687-6.744s4.484-6.402 4.484-6.402zM19.775 0c0 0 4.589 3.967 4.589 3.967s-4.315 5.58-4.315 5.58c0 0-6.030-4.735-6.030-4.735s5.756-4.812 5.756-4.812z</PathGeometry>
-        <Path x:Key="MediaPath" Fill="White"  Data="F1 M23.587 15.474c0 0 5.445 4.124 5.445 4.124s-4.077 12.401-4.077 12.401c0 0-7.634-4.732-7.634-4.732s6.266-11.793 6.266-11.793zM25.362 4.83c0 0 1.706 1.475 1.706 1.475s-11.641 19.789-11.641 19.789c0 0-3.46-2.145-3.46-2.145s13.394-19.12 13.394-19.12zM12.626 5.976c0 0 10.086 7.737 10.086 7.737s-7.284 12.382-7.284 12.382c0 0-15.428-9.564-15.428-9.564s12.626-10.555 12.626-10.555zM25.362 4.83c0 0 6.638 5.738 6.638 5.738s-2.435 7.407-2.435 7.407c0 0-8.687-6.744-8.687-6.744s4.484-6.402 4.484-6.402zM19.775 0c0 0 4.589 3.967 4.589 3.967s-4.315 5.58-4.315 5.58c0 0-6.030-4.735-6.030-4.735s5.756-4.812 5.756-4.812z"> </Path>
+        <Path x:Key="MediaPath" Fill="White"   Data="F1 M23.587 15.474c0 0 5.445 4.124 5.445 4.124s-4.077 12.401-4.077 12.401c0 0-7.634-4.732-7.634-4.732s6.266-11.793 6.266-11.793zM25.362 4.83c0 0 1.706 1.475 1.706 1.475s-11.641 19.789-11.641 19.789c0 0-3.46-2.145-3.46-2.145s13.394-19.12 13.394-19.12zM12.626 5.976c0 0 10.086 7.737 10.086 7.737s-7.284 12.382-7.284 12.382c0 0-15.428-9.564-15.428-9.564s12.626-10.555 12.626-10.555zM25.362 4.83c0 0 6.638 5.738 6.638 5.738s-2.435 7.407-2.435 7.407c0 0-8.687-6.744-8.687-6.744s4.484-6.402 4.484-6.402zM19.775 0c0 0 4.589 3.967 4.589 3.967s-4.315 5.58-4.315 5.58c0 0-6.030-4.735-6.030-4.735s5.756-4.812 5.756-4.812z"></Path>
+
+        <PathGeometry x:Key="PathGeometry"  Figures="M 0 50 Q 25 60 50 50 Q 75 40 100 50 M 100 50 Z" />
+
+        <PathFigure x:Key="PathFigure" StartPoint="0 0" IsClosed="False">
+            <ArcSegment IsLargeArc="False" Point="167 0" Size="30 30" SweepDirection="Counterclockwise" />
+        </PathFigure>
+
     </Window.Resources>
 
     <f:AeroGlassChrome.AeroGlassChrome>
         <f:AeroGlassChrome/>
     </f:AeroGlassChrome.AeroGlassChrome>
 
-    <Grid>
+    <Grid Margin="0,0,0,1">
 
         <ui:TitleBar Name="TitleBar" ThemeStyle="GlassDark" Title="TitleBar Sample" Icon="images/MediaClr32.svg" IconSize="16" >
             <ui:TitleBar.Buttons >
@@ -35,11 +47,58 @@
                 <ui:ImageIcon Fill="White" IconGeometry="{StaticResource MediaIconGeometry}"/>
             </ui:TitleBar.ImageIcon>-->
 
+            <ui:TitleBar.Text >
+                <vtb:VectorTextBlock Text="TitleBarUIs" 
+                                     StrokeThickness="1" 
+                                     Shift="-5"
+                                     Padding="0,5"
+                                     ContentAlignment="Left"
+                                     Margin="-2,0,0,0"
+                                     AutoScalePath="True">
+                    <vtb:VectorTextBlock.TextPath>
+                        <PathGeometry Figures="M 0 50 Q 25 60 50 50 Q 75 40 100 50 M 100 50 Z" />
+                    </vtb:VectorTextBlock.TextPath>
+                </vtb:VectorTextBlock>
+            </ui:TitleBar.Text>
         </ui:TitleBar>
 
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock FontSize="24" TextAlignment="Center">your awesome custom window with</TextBlock>
-            <TextBlock FontSize="54" FontWeight="Bold" TextAlignment="Center">TitleBarUIs</TextBlock>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="163,118,141,173" Width="488" Height="249">
+            <TextBlock FontSize="18" TextAlignment="Center" Height="40" Text="your awesome custom window with"/>
+            <vtb:VectorTextBlock Text="TitleBarUIs" 
+                                 FontSize="54" ContentAlignment="Center" 
+                                 StrokeThickness="2" 
+                                 Fill="Transparent" 
+                                 FontWeight="Bold" 
+                                 TextPath="{StaticResource PathGeometry}" 
+                                 AutoScalePath="True"
+                                 ShowPath="True"
+                                 Shift="5"
+                                 Padding="100,60,100,0"
+                                 Height="93"/>
+
+            <Border BorderBrush="Gray" BorderThickness="1" Margin="97,30,86,20" HorizontalAlignment="Center" Width="305">
+                <ui:TitleBar Name="TitleBar1" ThemeStyle="GlassDark" Title="TitleBar Sample" Icon="images/MediaClr32.svg" IconSize="16" >
+                    <ui:TitleBar.Buttons >
+                        <ui:WindowButtons ThemeStyle="{Binding Path=ThemeStyle, ElementName=TitleBar}" CloseButtonTone="Blue" f:ChromeBase.IsHitTestVisibleInChrome="True" />
+                    </ui:TitleBar.Buttons>
+
+                    <ui:TitleBar.Text >
+                        <vtb:VectorTextBlock Text="TitleBarUIs" 
+                                         StrokeThickness="1" 
+                                         Shift="-3"
+                                         Padding="0,5"
+                                         ContentAlignment="Left"
+                                         Margin="-2,0,0,0"
+                                         AutoScalePath="True">
+                            <vtb:VectorTextBlock.TextPath>
+                                <PathGeometry Figures="M 0 50 Q 25 60 50 50 Q 75 40 100 50 M 100 50 Z" />
+                            </vtb:VectorTextBlock.TextPath>
+                        </vtb:VectorTextBlock>
+                    </ui:TitleBar.Text>
+                </ui:TitleBar>
+            </Border>
+
+            <TextBlock FontSize="12"  Margin="0,20" TextAlignment="Center" Height="24" Text="Image Icon (.png, .ico, .jpeg, .svg), TilteBar, Buttons  "/>
         </StackPanel>
 
     </Grid>
