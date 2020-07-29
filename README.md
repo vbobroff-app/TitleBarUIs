@@ -11,7 +11,7 @@ Title bar and buttons for custom WPF windows
 ## How to Install
 *CLI  Nuget Pack command*
 ```
-Install-Package FluentWPFChromes
+Install-Package TitleBarUIs
 ```
 https://nuget.org/packages/TitleBarUIs
 
